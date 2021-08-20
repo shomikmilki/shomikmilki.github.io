@@ -1,0 +1,326 @@
+/* *************************************************************************************
+	One% CSS Grid - 12 Columns Fluid CSS Grid System
+	Why One% ? Let’s count ...
+		we have 12 columns (magic number divided by 2, 3, 4, 6)
+		for 12 columns we need 11 margins
+		so if we count margin 3%, then 3% * 11 margins = 33%
+		and if we count width of 1 column 5.5%, than 5.5% * 12 columns = 66%
+		in the end we have 33% + 66% = 99% aaand ???
+		1% is still here so that's the name - One%
+	2 starting options ? Let’s count a bit more ...
+		1200px - perfectly fits 1280 screens
+			12 columns
+			margin 3% / 36px (full-width)
+			col1 5.5% / 66px (full-width)
+		1000px - perfectly fits 1024 screens
+			12 columns
+			margin 3% / 30px (full-width)
+			col1 5.5% / 55px (full-width)
+*/
+ * {
+	box-sizing: border-box;
+ }
+
+ 
+ 
+ 
+/* *************************************************************************************
+
+
+.row {
+	clear: both;
+	padding: 0 0 0 1%;
+}
+
+
+
+
+/* *************************************************************************************
+ * Common columns definitions
+ */
+
+img {vertical-align: middle;}
+
+#header {height: 45px;
+		 width: 100%;
+		 background: rgb(0,80,71);
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 z-index: 999;}
+
+#profile {max-width: auto;
+		  margin-right: 10px;
+		  position: fixed;
+		  left: 30px;
+		  top: 8px;}
+
+#username {font-weight: bold;
+	       font-size: 12px;
+		   font-family: Tahoma;
+		   color: white;
+		   max-width: auto;
+		   line-height: 0;
+		   position: fixed;
+		   left: 65px;
+		   top: 20px;}
+
+#navigation {width: 50%;
+			 float: center;
+			 padding: 12px 0px 0px 10px;
+			 position: fixed;
+			 top: 0;
+			 left: 24%;}
+
+#navigation ul {list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;}
+		  
+#navigation ul li {display: inline;
+	color: white;}
+
+a {text-decoration: none;
+   font-weight: bold;
+   font-size: 12px;
+   font-family: Tahoma;
+   color: white;}
+
+#search {width: 22%;
+		 height: 20px;
+		 float: right;
+		 position: fixed;
+		 top: 13px;
+		 right: 2%;
+		 max-width: auto;
+		 line-height: 0;
+		 background: white;
+	     border-radius: 25px;
+		 }
+
+#bar input[type=text] {float: left;
+					   width: 80%;
+					   margin-left: 5px;
+					   text-align: left;
+					   font-weight: bold;
+					   font-size: 12px;
+					   font-family: Tahoma;
+					   color: black;
+    				   border: none;}
+
+#blank {height: 27px;}
+
+#blog1 {height: 500px;
+		width: 100%;
+		background-image: url("images/battersea2.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		font-size: 12px;
+		font-family: Tahoma;
+		color: white;
+		position: relative;
+	    overflow: hidden;}
+
+#blank2 {height: 50px;
+		 font-size: 12px;
+		 font-family: Tahoma;
+		 color: sienna;
+		 text-align: center;}
+
+#blog2, #blog3, #blog4, #blog5 {height: 200px;
+							    font-size: 10px;
+							    font-family: Tahoma;
+							    color: white;
+							    padding: 90px 5px 0 10px;
+							    background-repeat: no-repeat;}
+
+#blog2 {background: url(images/ravenscourt.png);
+		background-position: center;}
+
+#blog3 {background: url(images/holland.png);
+	    background-position: left;}
+
+#blog4 {background: url(images/bishops.jpg);
+	background-position: center;}
+
+#blog5 {background: url(images/richmond.jpg);
+	background-position: left;}
+
+.overlay {position: relative;
+		  bottom: 100%;
+		  left: 0;
+		  right: 0;
+		  overflow: hidden;
+	      width: 100%;
+		  height: 0;
+		  transition: .5s ease;}
+
+#blog2:hover .overlay {height: 100%;}
+#blog3:hover .overlay {height: 100%;}
+#blog4:hover .overlay {height: 100%;}
+#blog5:hover .overlay {height: 100%;}
+
+.text2 {color: white;
+	    font-size: 12px;
+	    position: relative;
+	    top: 50%;
+	    left: 50%;
+	    -webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+	    text-align: left;}
+
+#blank3 {height: 90px;
+		 padding-top: 1px;
+		 font-size: 15px;
+		 font-family: Tahoma;
+		 color: sienna;
+		 text-align: center;}
+
+.special {background-color: antiquewhite;
+		  background-size: 100% 100%;
+		  display: flex;
+		  justify-content: center;
+		  flex-wrap: wrap;
+		  height: 450px;}
+
+#featured {height: 400px;
+		   font-size: 15px;
+		   font-family: Tahoma;
+		   color: sienna;
+		   max-width: 640px;
+		   float: left;}
+
+#event1 {height: 330px;
+		width:100%;
+		background-image: url("images/vangogh.jfif");
+		background-repeat: no-repeat;
+		background-position: left;
+		overflow: hidden;
+		position: relative;
+		float: bottom;
+		font-size: 13px;
+		font-family: Tahoma;
+		color: white;}
+
+#text3 {position: absolute;
+	    bottom: 0;}
+
+#news {height: 400px;
+	   font-size: 15px;
+	   font-family: Tahoma;
+	   color: sienna;
+	   max-width: 640px;
+	   float: right;}
+
+#newspic {height: 150px;
+		  background: url(images/news.jpg);
+		  width: 100%;
+		  background-repeat: no-repeat;
+		  background-position: center;}
+
+#text4 {height: 180px;
+	    background: rgb(0,80,71);
+		max-width: 640px;
+		background-position: center;
+		float: middle;}
+
+ul {list-style-type: square;
+	margin: 0;
+    padding-right: 5px;}
+
+ul li {font-size: 13px;
+	   font-family: Tahoma;
+	   display: list-item;
+	   color: white;
+	   padding-top: 10px;}
+
+#thanks {height: 250px;
+	   font-size: 12px;
+	   font-family: Tahoma;
+	   color: sienna;
+	   text-align: center;}
+
+#footer {height: 45px;
+		 width: 110%;
+		 margin-left: -10px;
+		 background: rgb(0,80,71);}
+
+#copyright {float: left;
+			padding: 1px 0 0 30px;
+			font-size: 12px;
+   			font-family: Tahoma;
+   			color: white;}
+
+#navigation2 {float: right;
+			  padding: 12px 10% 0px 10px;}
+
+#navigation2 ul {list-style-type: none;
+   margin: 0;
+   padding: 0;
+   text-align: center;}
+		 
+#navigation2 ul li {display: inline;
+   color: white;}
+
+
+html {max-width: 100%;
+	  overflow-x: hidden;}
+
+.row {clear: both;}
+
+.col {float: left;
+	  margin: 0 2% 0 0; /* n e s w */}
+
+.first-col {margin-left:2%}
+.only-col {margin: 0;
+	       width: 100%;}
+
+.col1 { width: 5.5%; }
+.col2 { width: 14%; }
+.col3 { width: 22.5%;
+        min-width: 150px; }
+.col4 { width: 31%; }
+.col6 { width: 47%; 
+		}
+.col5 { width: 39.5%; }
+.col7 { width: 56.5%; }
+.col8 { width: 65%; }
+.col9 { width: 73.5%; }
+.col10 { width: 82%; }
+.col11 { width: 90.5%; }
+.col12 { width: 99%; margin: 0; }
+/*
+*/
+
+@media only screen and (max-width : 700px) {
+	.col {
+		max-width:100%;
+		margin: 0;
+	}
+
+	.desktop {display:none}	
+}
+
+@media only screen and (max-width : 630px) {
+	.col {
+		max-width:100%;
+		margin: 0;
+	}
+
+	.desktop2 {display:none}	
+}
+
+@media only screen and (max-width : 550px) {
+	.col {
+		max-width:100%;
+		margin: 0;
+	}
+
+	.desktop3 {display:none}	
+}
+
+
+/* *************************************************************************************
+ * Styles to show boxes
+ */
